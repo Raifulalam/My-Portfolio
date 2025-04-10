@@ -1,0 +1,129 @@
+/* src/styles/About.css */
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fa;
+    color: #333;
+}
+
+/* About Container */
+.about-container {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* About Section */
+.about {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.about-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.about-header h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+}
+
+.about-description {
+    font-size: 18px;
+    color: #777;
+    line-height: 1.6;
+    margin-top: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* About Content */
+.about-content {
+    margin-top: 40px;
+}
+
+.about-section,
+.about-skills {
+    margin-bottom: 40px;
+}
+
+.about-section h2,
+.about-skills h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.about-section p,
+.about-skills ul {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.about-skills ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.about-skills li {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-container {
+        padding: 0px;
+    }
+
+    .about-header h1 {
+        font-size: 28px;
+    }
+
+    .about-description {
+        font-size: 16px;
+    }
+
+    .about-section h2,
+    .about-skills h2 {
+        font-size: 24px;
+    }
+
+    .about-skills li {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-header h1 {
+        font-size: 24px;
+    }
+
+    .about-description {
+        font-size: 14px;
+    }
+
+    .about-section h2,
+    .about-skills h2 {
+        font-size: 20px;
+    }
+
+    .about-skills li {
+        font-size: 14px;
+    }
+}

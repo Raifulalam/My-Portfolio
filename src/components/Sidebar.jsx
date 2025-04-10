@@ -95,6 +95,8 @@ const Sidebar = () => {
                 <div className="close-btn" onClick={toggleSidebar}>
                     <span>&times;</span>
                 </div>
+                {/* Contact Section */}
+
             </div>
         </div>
     );

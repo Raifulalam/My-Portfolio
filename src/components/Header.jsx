@@ -16,17 +16,17 @@ const Header = () => {
                     />
                 </div>
 
-                <div className="hero-details">
-                    <h1>Hi, I'm Mohammed Raiful Alam</h1>
-                    <p>Software Engineer</p>
-                    <p className="hero-description">
-                        Passionate about building scalable web applications and solving complex problems.
-                        I specialize in frontend and backend development, constantly learning new technologies to create innovative solutions.
-                    </p>
-                    <Link to="/explore" className="explore-button">
-                        Explore My Work
-                    </Link>
-                </div>
+                <section className="hero-section">
+                    <div className="hero-text">
+                        <h1>Hello, I'm <span className="highlight">Mohammed Raiful Alam</span></h1>
+                        <p>Software Developer | Frontend & Backend Enthusiast | Tech Explorer</p>
+                        <a href="#projects" className="cta-button">View My Work</a>
+                    </div>
+
+
+                </section>
+
+
 
             </div>
 

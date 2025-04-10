@@ -1,0 +1,72 @@
+.projects-container {
+    padding: 2rem;
+    max-width: 1100px;
+    margin: auto;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f9f9f9;
+}
+
+.projects-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.projects-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.project-card {
+    background-color: #fdfdfd;
+    border: 1px solid #e1e1e1;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 16px rgba(0, 0, 0, 0.1);
+}
+
+.project-card h3 {
+    margin-top: 0;
+    font-size: 1.3rem;
+    color: #007bff;
+}
+
+.project-card p {
+    font-size: 0.95rem;
+    margin: 0.5rem 0 1rem;
+    color: #555;
+}
+
+.project-tech {
+    margin-bottom: 1rem;
+}
+
+.tech-badge {
+    background-color: #e0f0ff;
+    color: #007bff;
+    padding: 0.3rem 0.7rem;
+    border-radius: 4px;
+    margin-right: 0.5rem;
+    font-size: 0.8rem;
+}
+
+.project-links a {
+    display: inline-block;
+    margin-right: 1rem;
+    color: #007bff;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.project-links a:hover {
+    color: #0056b3;
+}

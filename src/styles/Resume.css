@@ -1,0 +1,101 @@
+.resume-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 2rem 1rem;
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+    background: white;
+}
+
+.resume-title {
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    color: #222;
+}
+
+.resume-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.resume-section {
+    margin-bottom: 2rem;
+}
+
+.resume-section h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: #007bff;
+}
+
+.resume-item {
+    margin-bottom: 1.5rem;
+}
+
+.resume-item h3 {
+    font-size: 1.2rem;
+    margin: 0.2rem 0;
+    color: #333;
+}
+
+.date {
+    display: block;
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 0.5rem;
+}
+
+.resume-item ul {
+    padding-left: 1.2rem;
+    margin: 0.5rem 0 0;
+}
+
+.resume-item ul li {
+    line-height: 1.6;
+    color: #444;
+}
+
+.skills-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.7rem;
+    list-style: none;
+    padding-left: 0;
+}
+
+.skills-list li {
+    background-color: #f0f4ff;
+    color: #007bff;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    text-align: center;
+    transition: background 0.3s;
+}
+
+.skills-list li:hover {
+    background-color: #e2ebff;
+}
+
+.resume-download {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.download-btn:hover {
+    background-color: #0056b3;
+}

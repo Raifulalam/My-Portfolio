@@ -2,7 +2,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
-import Home from './components/Home';
+
 import Vlogs from './components/Vlogs';
 import Resume from './components/Resume';
 import About from './components/About';
@@ -29,10 +29,10 @@ function App() {
 
           {/* Routing content */}
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<About />} />
             <Route path="/vlogs" element={<Vlogs />} />
             <Route path="/resume" element={<Resume />} />
-            <Route path="/about" element={<About />} />
+
             <Route path="/projects" element={<Projects />} />
             <Route path="/activities" element={<Activities />} />
           </Routes>

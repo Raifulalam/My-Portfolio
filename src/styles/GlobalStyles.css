@@ -12,15 +12,15 @@ body {
 }
 
 .content {
-    width: 100%;
-    padding: 20px;
-    padding-top: 76vh;
-    overflow-y: scroll;
-    height: 100vh;
+
+
+    padding-top: 75vh;
+
+
 }
 
 h1 {
-    color: #2c3e50;
+    color: #dbe1e7;
 }
 
 p {
@@ -84,7 +84,7 @@ p {
     .hero-container {
         flex-direction: column;
         justify-content: center;
-        height: auto;
+        height: 76vh;
         padding-top: 10px;
         padding-bottom: 8px;
         /* Add padding on top for better spacing */
