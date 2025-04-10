@@ -1,0 +1,150 @@
+/* src/styles/Sidebar.css */
+
+/* For larger screens (default) */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    background-color: #2c3e50;
+    color: white;
+    transition: left 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 111;
+
+
+}
+
+/* Sidebar Title */
+.sidebar-title {
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+    margin: 0;
+}
+
+/* Sidebar List */
+.sidebar-list {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Sidebar Link Styling */
+.sidebar-link {
+    color: white;
+    padding: 15px;
+    display: block;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for links */
+.sidebar-link:hover {
+    background-color: #34495e;
+}
+
+/* Profile Section */
+
+/* Profile Image Styling */
+.profile-image {
+    display: none;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid white;
+}
+
+/* Active Link Style */
+.active-link {
+    background-color: #2980b9;
+    font-weight: bold;
+}
+
+/* Hamburger Menu (visible on small screens) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.hamburger .bar {
+    width: 100%;
+    height: 5px;
+    background-color: white;
+}
+
+/* Close button styling */
+.close-btn {
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    display: none;
+    /* Hide on larger screens */
+}
+
+/* For smaller screens (Mobile devices) */
+@media (max-width: 768px) {
+
+    /* Sidebar initially hidden on mobile */
+    .sidebar {
+        left: -250px;
+        position: fixed;
+        height: 100vh;
+        width: 250px;
+    }
+
+    /* Show sidebar when toggled */
+    .sidebar.show {
+        left: 0;
+        display: block;
+    }
+
+    .profile-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 40px;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    /* Display hamburger menu on mobile */
+    .hamburger {
+        display: flex;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 100;
+    }
+
+    /* Close button in mobile */
+    .close-btn {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 100;
+    }
+
+    /* Adjust profile image size on mobile */
+    .profile-image {
+        display: block;
+        width: 60px;
+        height: 60px;
+    }
+
+    .sidebar-list {
+        flex-direction: column;
+    }
+}

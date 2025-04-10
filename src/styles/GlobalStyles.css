@@ -1,0 +1,201 @@
+/* src/styles/GlobalStyles.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ecf0f1;
+    margin: 0;
+    padding: 0;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    width: 100%;
+    padding: 20px;
+    padding-top: 76vh;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+h1 {
+    color: #2c3e50;
+}
+
+p {
+    color: #7f8c8d;
+}
+
+/* Mobile-specific styles (screen width 768px and below) */
+@media (max-width: 768px) {
+
+    /* Content area when sidebar is visible */
+    .content {
+        padding-top: 80vh;
+    }
+}
+
+/* Hero Container Styles */
+.hero-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    background: linear-gradient(black, rgba(34, 32, 32, 0.8));
+    position: fixed;
+    top: 0;
+    z-index: -10;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    padding: 120px 20px 0px 20px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    z-index: -21;
+}
+
+/* Add a small shadow effect to text for better visibility on darker backgrounds */
+.hero-details h1,
+.hero-details p {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Hero details section */
+.hero-details {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    color: white;
+    z-index: 1;
+
+}
+
+/* Hero Image Styles */
+.hero-image {
+    object-fit: cover;
+
+    max-height: 100%;
+}
+
+/* Adjust Hero section for mobile responsiveness */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+        justify-content: center;
+        height: auto;
+        padding-top: 10px;
+        padding-bottom: 8px;
+        /* Add padding on top for better spacing */
+    }
+
+    .image-container {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .hero-image {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+    }
+
+    .hero-details h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero-details p {
+        font-size: 1rem;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav ul li {
+        margin: 10px 0;
+    }
+}
+
+/* Navigation Styles */
+.nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.nav ul li {
+    margin-left: 20px;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.nav ul li a:hover {
+    color: #3498db;
+}
+
+/* Explore Button Styles */
+/* Explore Button Styles */
+.explore-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #007BFF;
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    width: max-content;
+    cursor: pointer;
+    align-self: flex-start;
+    z-index: 10;
+    /* Ensure the button is above other elements */
+    position: relative;
+    /* Make sure it's positioned for interaction */
+}
+
+.explore-button:hover {
+    background-color: #0056b3;
+    cursor: pointer;
+}
+
+/* Mobile-specific Button Adjustments */
+@media (max-width: 768px) {
+    .explore-button {
+
+        text-align: center;
+    }
+}
+
+/* Tablet and Mobile Adjustments (Width 768px to 1024px) */
+@media (max-width: 1024px) {
+
+
+    .hero-image {
+        width: 130px;
+        height: 130px;
+    }
+
+    .hero-details h1 {
+        margin: 0px;
+        font-size: 1.6rem;
+    }
+
+    .hero-details p {
+        font-size: 1.1rem;
+        margin: 0px;
+        padding: 8px;
+    }
+}
