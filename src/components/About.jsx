@@ -1,39 +1,78 @@
 // src/components/About.js
 import React from 'react';
 import '../styles/About.css';
+import ProfileImg from '../assets/Mohammed_Raiful.png'; // Ensure this path is correct
 
 const About = () => {
+    const birthday = "2003-04-23";
+    const birthDate = new Date(birthday);
+    const today = new Date();
+
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+
     return (
         <div className="about-container">
-            <section className="about">
-                <div className="about-header">
-                    <h1>About Me</h1>
-                    <p className="about-description">
-                        Hello and welcome to my profile! I'm Mohammed Raiful Alam, a dedicated web developer and programmer with a deep passion for crafting innovative digital solutions, user-friendly websites, and applications. My journey in the world of web development began with a curiosity for technology and a desire to create impactful experiences on the internet.
+
+            {/* Top Section with Image and Summary */}
+            <section className="about-top">
+                <div className="about-image-wrapper">
+                    <img src={ProfileImg} alt="Mohammed Raiful Alam" className="about-image" />
+                </div>
+                <div className="about-intro">
+                    <h1>Hi, I'm Mohammed Raiful Alam</h1>
+                    <p>
+                        A full-stack web developer & UI/UX enthusiast passionate about turning ideas into scalable and user-centric digital experiences. With a strong foundation in modern web technologies and a keen eye for detail, I help bring visions to life—code by code.
                     </p>
+                    <a href="#contact" className="cta-button">Let’s Connect</a>
                 </div>
+            </section>
 
-                <div className="about-content">
-                    <section className="about-section">
-                        <h2>What I Do</h2>
-                        <p>
-                            I’m a passionate developer with experience in building full-stack applications. Skilled in JavaScript, React, Node.js, and modern web technologies. I love solving problems and turning ideas into real-world applications.
-                        </p>
-                    </section>
+            {/* Skills */}
+            <section className="about-skills">
+                <h2>Tech Stack</h2>
+                <ul>
+                    <li>JavaScript</li>
+                    <li>React.js</li>
+                    <li>Node.js</li>
+                    <li>Express.js</li>
+                    <li>MongoDB</li>
+                    <li>HTML5 & CSS3</li>
+                    <li>Python</li>
+                    <li>PHP</li>
+                    <li>Git & GitHub</li>
+                </ul>
+            </section>
 
-                    <section className="about-skills">
-                        <h2>Skills</h2>
-                        <ul>
-                            <li>JavaScript</li>
-                            <li>React</li>
-                            <li>Node.js</li>
-                            <li>Express</li>
-                            <li>MongoDB</li>
-                            <li>HTML & CSS</li>
-                            <li>Git & GitHub</li>
-                        </ul>
-                    </section>
+            {/* Personal Info */}
+            <section className="personal-info">
+                <h2>Personal Information</h2>
+                <div className="info-grid">
+                    <div><strong>Role:</strong> Full Stack Developer</div>
+                    <div><strong>Birthday:</strong> 23 April 2003</div>
+                    <div><strong>Age:</strong> {age}</div>
+                    <div><strong>Phone:</strong> +91 8235787151</div>
+                    <div><strong>City:</strong> Mathura, India</div>
+                    <div><strong>Degree:</strong> B.Tech in Computer Science</div>
+                    <div><strong>Freelance:</strong> Available</div>
                 </div>
+            </section>
+
+            {/* Summary */}
+            <section className="about-summary">
+                <h2>Professional Summary</h2>
+                <p>
+                    With years of experience in both frontend and backend development, I bring a full-stack mindset to every project. My work is focused on clean design, secure code, and performance optimization.
+                </p>
+                <p>
+                    Whether it's building responsive UIs with React, APIs with Node.js, or implementing databases with MongoDB or MySQL, I approach each task with precision and a passion for learning.
+                </p>
+                <p>
+                    I value collaboration, continuous improvement, and staying current with industry trends. Let’s build something amazing together.
+                </p>
             </section>
         </div>
     );
