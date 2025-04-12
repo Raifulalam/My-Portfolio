@@ -1,4 +1,3 @@
-// src/App.js
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
@@ -42,8 +41,8 @@ function App() {
         <Home />
 
         <div className="content">
-          {/* Calling the custom hook here inside Router */}
-          <usePageTitle />
+          {/* Now calling the custom hook inside Router */}
+          <PageTitleHandler />
 
           {/* Routing content */}
           <Routes>
@@ -58,5 +57,11 @@ function App() {
     </Router>
   );
 }
+
+// This component calls the custom hook inside Router context
+const PageTitleHandler = () => {
+  usePageTitle(); // Correct placement of the custom hook
+  return null;
+};
 
 export default App;

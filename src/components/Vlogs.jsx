@@ -1,19 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
+
 import '../styles/Vlogs.css';
 
 const Vlogs = () => {
     const [vlogs, setVlogs] = useState([]);
     const [showModal, setShowModal] = useState(false);
-    const [formData, setFormData] = useState({
-        type: 'quote',
-        content: ''
-    });
+    const [formData, setFormData] = useState({ type: 'quote', content: '' });
+    const [activeType, setActiveType] = useState('quote');
 
-    const [activeType, setActiveType] = useState('quote'); // default view = quote
 
-    const handleAddClick = () => {
-        setShowModal(true);
-    };
+
+    useEffect(() => {
+        axios.get('http://localhost:5000/api/vlogs/vlogs')
+            .then((res) => setVlogs(res.data))
+            .catch((err) => console.error("Error fetching vlogs:", err));
+    }, []);
+
+
+    const handleAddClick = () => setShowModal(true);
 
     const handleCloseModal = () => {
         setFormData({ type: 'quote', content: '' });
@@ -28,13 +34,12 @@ const Vlogs = () => {
         setFormData({ ...formData, type: e.target.value, content: '' });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if (!formData.content.trim()) return;
 
         let content = formData.content.trim();
 
-        // Convert YouTube watch or short links to embed format
         if (formData.type === 'video') {
             const youtubeWatchRegex = /(?:https?:\/\/)?(?:www\.)?youtube\.com\/watch\?v=([^&]+)/;
             const youtubeShortRegex = /(?:https?:\/\/)?(?:www\.)?youtu\.be\/([^\s?&]+)/;
@@ -49,10 +54,14 @@ const Vlogs = () => {
             }
         }
 
-        setVlogs([{ ...formData, content, id: Date.now() }, ...vlogs]);
-        handleCloseModal();
+        try {
+            const res = await axios.post('http://localhost:5000/api/vlogs/vlogs', { ...formData, content });
+            setVlogs([res.data, ...vlogs]);
+            handleCloseModal();
+        } catch (err) {
+            console.error('Error posting vlog:', err);
+        }
     };
-
 
     const renderVlog = (vlog) => {
         switch (vlog.type) {
@@ -67,7 +76,7 @@ const Vlogs = () => {
         }
     };
 
-    const filteredVlogs = vlogs.filter((vlog) => vlog.type === activeType);
+    const filteredVlogs = vlogs.filter(vlog => vlog.type === activeType);
 
     return (
         <div className="vlogs-container">
@@ -86,7 +95,7 @@ const Vlogs = () => {
             <div className="vlog-list">
                 {filteredVlogs.length > 0 ? (
                     filteredVlogs.map((vlog) => (
-                        <div className="vlog-card" key={vlog.id}>
+                        <div className="vlog-card" key={vlog._id}>
                             <div className="vlog-type">{vlog.type.toUpperCase()}</div>
                             <div className="vlog-content">{renderVlog(vlog)}</div>
                         </div>
@@ -113,7 +122,7 @@ const Vlogs = () => {
                                 placeholder={
                                     formData.type === 'quote' ? 'Write your quote here...' :
                                         formData.type === 'link' ? 'Paste your link here...' :
-                                            'Paste YouTube embed link (e.g. https://www.youtube.com/embed/xyz)'
+                                            'Paste a YouTube link'
                                 }
                                 value={formData.content}
                                 onChange={handleInputChange}

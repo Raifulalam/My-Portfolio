@@ -41,12 +41,12 @@ const Sidebar = () => {
                         </li>
                         <li>
                             <NavLink
-                                to="/vlogs"
+                                to="/about"
                                 className={({ isActive }) =>
                                     isActive ? 'sidebar-link active-link' : 'sidebar-link'
                                 }
                             >
-                                <i className="bx bx-video"></i> Vlogs
+                                <i className="bx bx-user"></i> About
                             </NavLink>
                         </li>
                         <li>
@@ -59,16 +59,9 @@ const Sidebar = () => {
                                 <i className="bx bx-file"></i> Resume
                             </NavLink>
                         </li>
-                        <li>
-                            <NavLink
-                                to="/about"
-                                className={({ isActive }) =>
-                                    isActive ? 'sidebar-link active-link' : 'sidebar-link'
-                                }
-                            >
-                                <i className="bx bx-user"></i> About
-                            </NavLink>
-                        </li>
+
+
+
                         <li>
                             <NavLink
                                 to="/projects"
@@ -77,6 +70,16 @@ const Sidebar = () => {
                                 }
                             >
                                 <i className="bx bx-briefcase"></i> Projects
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink
+                                to="/vlogs"
+                                className={({ isActive }) =>
+                                    isActive ? 'sidebar-link active-link' : 'sidebar-link'
+                                }
+                            >
+                                <i className="bx bx-video"></i> Vlogs
                             </NavLink>
                         </li>
                         <li>
