@@ -9,7 +9,8 @@
 .content {
 
 
-    padding-top: 90vh;
+    margin-top: 65vh;
+    z-index: 111;
 
 
 }

@@ -23,6 +23,12 @@
 }
 
 .add-btn {
+    display: none;
+
+}
+
+.add-btnadmin {
+    display: block;
     position: absolute;
     right: 1rem;
     top: 0;
@@ -37,7 +43,7 @@
     transition: background 0.3s;
 }
 
-.add-btn:hover {
+.add-btnadmin:hover {
     background-color: #0056b3;
 }
 

@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
-
 import '../styles/Vlogs.css';
 
 const Vlogs = () => {
@@ -9,15 +7,22 @@ const Vlogs = () => {
     const [showModal, setShowModal] = useState(false);
     const [formData, setFormData] = useState({ type: 'quote', content: '' });
     const [activeType, setActiveType] = useState('quote');
+    const [admin, setAdmin] = useState(localStorage.getItem('authToken'));
+    const [loading, setLoading] = useState(true); // State for loading indication
+    const BaseUrl = process.env.REACT_APP_API_URL;
 
-
-
+    // Fetch vlogs on component mount
     useEffect(() => {
-        axios.get('http://localhost:5000/api/vlogs/vlogs')
-            .then((res) => setVlogs(res.data))
-            .catch((err) => console.error("Error fetching vlogs:", err));
+        axios.get(`${BaseUrl}/vlogs/vlogs`)
+            .then((res) => {
+                setVlogs(res.data);
+                setLoading(false);
+            })
+            .catch((err) => {
+                console.error("Error fetching vlogs:", err);
+                setLoading(false);
+            });
     }, []);
-
 
     const handleAddClick = () => setShowModal(true);
 
@@ -40,6 +45,7 @@ const Vlogs = () => {
 
         let content = formData.content.trim();
 
+        // If the content is a YouTube URL, convert it to an embed URL
         if (formData.type === 'video') {
             const youtubeWatchRegex = /(?:https?:\/\/)?(?:www\.)?youtube\.com\/watch\?v=([^&]+)/;
             const youtubeShortRegex = /(?:https?:\/\/)?(?:www\.)?youtu\.be\/([^\s?&]+)/;
@@ -55,7 +61,7 @@ const Vlogs = () => {
         }
 
         try {
-            const res = await axios.post('http://localhost:5000/api/vlogs/vlogs', { ...formData, content });
+            const res = await axios.post(`${BaseUrl}/vlogs/vlogs`, { ...formData, content });
             setVlogs([res.data, ...vlogs]);
             handleCloseModal();
         } catch (err) {
@@ -83,28 +89,49 @@ const Vlogs = () => {
             <div className="vlogs-header">
                 <h1>My Vlogs</h1>
                 <p>Share your thoughts, quotes, links, or videos!</p>
-                <button className="add-btn" onClick={handleAddClick}>+</button>
-            </div>
-
-            <div className='buttons-container'>
-                <button className={`vlog-btn ${activeType === 'quote' ? 'active' : ''}`} onClick={() => setActiveType('quote')}>Quotes</button>
-                <button className={`vlog-btn ${activeType === 'link' ? 'active' : ''}`} onClick={() => setActiveType('link')}>Links</button>
-                <button className={`vlog-btn ${activeType === 'video' ? 'active' : ''}`} onClick={() => setActiveType('video')}>Videos</button>
-            </div>
-
-            <div className="vlog-list">
-                {filteredVlogs.length > 0 ? (
-                    filteredVlogs.map((vlog) => (
-                        <div className="vlog-card" key={vlog._id}>
-                            <div className="vlog-type">{vlog.type.toUpperCase()}</div>
-                            <div className="vlog-content">{renderVlog(vlog)}</div>
-                        </div>
-                    ))
-                ) : (
-                    <p className="no-vlogs">No {activeType}s posted yet.</p>
+                {admin && (
+                    <button className={`add-btn${admin ? 'admin' : ''}`} onClick={handleAddClick}>+</button>
                 )}
             </div>
 
+            {/* Filter buttons for vlog types */}
+            <div className='buttons-container'>
+                <button
+                    className={`vlog-btn ${activeType === 'quote' ? 'active' : ''}`}
+                    onClick={() => setActiveType('quote')}>
+                    Quotes
+                </button>
+                <button
+                    className={`vlog-btn ${activeType === 'link' ? 'active' : ''}`}
+                    onClick={() => setActiveType('link')}>
+                    Links
+                </button>
+                <button
+                    className={`vlog-btn ${activeType === 'video' ? 'active' : ''}`}
+                    onClick={() => setActiveType('video')}>
+                    Videos
+                </button>
+            </div>
+
+            {/* Display loading message or vlogs */}
+            {loading ? (
+                <p>Loading vlogs...</p>
+            ) : (
+                <div className="vlog-list">
+                    {filteredVlogs.length > 0 ? (
+                        filteredVlogs.map((vlog) => (
+                            <div className="vlog-card" key={vlog._id}>
+                                <div className="vlog-type">{vlog.type.toUpperCase()}</div>
+                                <div className="vlog-content">{renderVlog(vlog)}</div>
+                            </div>
+                        ))
+                    ) : (
+                        <p className="no-vlogs">No {activeType}s posted yet.</p>
+                    )}
+                </div>
+            )}
+
+            {/* Modal to add new vlog */}
             {showModal && (
                 <div className="modal-overlay">
                     <div className="modal">

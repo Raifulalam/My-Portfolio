@@ -1,70 +1,90 @@
 // src/components/Projects.js
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import '../styles/Projects.css';
 
-const projects = [
-    {
-        title: 'Portfolio Website',
-        description: 'A personal portfolio site built using React, showcasing my skills and work.',
-        tech: ['React', 'CSS', 'Vite'],
-        live: 'https://yourportfolio.com',
-        github: 'https://github.com/yourusername/portfolio'
-    },
-    {
-        title: 'Real-Time Location Tracker',
-        description: 'Full-stack app to track user locations in real-time using JavaScript and SQL for backend data handling.',
-        tech: ['JavaScript', 'Node.js', 'SQL'],
-        live: 'https://yourlocationtracker.com',
-        github: 'https://github.com/yourusername/real-time-location-tracker'
-    },
-    {
-        title: 'AI Text Summarizer',
-        description: 'Developed an AI-powered text summarizer using APIs to generate concise content from lengthy input.',
-        tech: ['JavaScript', 'Node.js', 'APIs'],
-        live: 'https://youraisummarizer.com',
-        github: 'https://github.com/yourusername/ai-text-summarizer'
-    },
-    {
-        title: 'Knowledge Sharing Forum',
-        description: 'A platform for users to share knowledge and interact through posts and comments.',
-        tech: ['React', 'Node.js', 'MongoDB'],
-        live: 'https://yourforum.com',
-        github: 'https://github.com/yourusername/knowledge-sharing-forum'
-    },
-    {
-        title: 'E-commerce Website',
-        description: 'Designed and built a complete e-commerce platform with product listings, shopping cart, and checkout functionality.',
-        tech: ['React', 'Node.js', 'MongoDB', 'CSS'],
-        live: 'https://yourecommerce.com',
-        github: 'https://github.com/yourusername/e-commerce-website'
-    },
-    {
-        title: 'Restaurant Reservation System',
-        description: 'A web-based tool that allows users to book restaurant tables and manage schedules.',
-        tech: ['React', 'Node.js', 'MongoDB'],
-        live: 'https://yourreservation.com',
-        github: 'https://github.com/yourusername/restaurant-reservation-system'
-    },
-    {
-        title: 'Personal Portfolio',
-        description: 'A simple personal website to showcase my skills and projects, built using React.',
-        tech: ['React', 'CSS', 'Vite'],
-        live: 'https://yourportfolio.com',
-        github: 'https://github.com/yourusername/personal-portfolio'
-    },
-    {
-        title: 'Music Test Explorer',
-        description: 'Created a platform to explore and interact with music-related content and tests.',
-        tech: ['React', 'JavaScript', 'APIs'],
-        live: 'https://yourmusicexplorer.com',
-        github: 'https://github.com/yourusername/music-test-explorer'
-    }
-];
+const BaseUrl = process.env.REACT_APP_API_URL;
 
 const Projects = () => {
+    const [projects, setProjects] = useState([]);
+    const [showForm, setShowForm] = useState(false);
+    const [newProject, setNewProject] = useState({
+        title: '',
+        description: '',
+        tech: '',
+        live: '',
+        github: ''
+    });
+    const [admin, setAdmin] = useState(localStorage.getItem('authToken'));
+
+
+    useEffect(() => {
+        fetchProjects();
+    }, []);
+
+    const fetchProjects = () => {
+        axios.get(`${BaseUrl}/projects/projects`)
+            .then(response => {
+                setProjects(response.data);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    };
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setNewProject(prev => ({
+            ...prev,
+            [name]: value
+        }));
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const projectToSend = {
+            ...newProject,
+            tech: newProject.tech.split(',').map(t => t.trim())
+        };
+
+        axios.post(`${BaseUrl}/projects/projects`, projectToSend)
+            .then(() => {
+                fetchProjects();
+                setShowForm(false);
+                setNewProject({
+                    title: '',
+                    description: '',
+                    tech: '',
+                    live: '',
+                    github: ''
+                });
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    };
+
     return (
         <div className="projects-container">
-            <h1 className="projects-title">My Projects</h1>
+            <div className="projects-header">
+                <h1 className="projects-title">My Projects</h1>
+                {admin && (
+                    <button className="add-button" onClick={() => setShowForm(!showForm)}>+</button>
+                )}
+
+            </div>
+
+            {showForm && (
+                <form className="project-form" onSubmit={handleSubmit}>
+                    <input type="text" name="title" placeholder="Title" value={newProject.title} onChange={handleInputChange} required />
+                    <textarea name="description" placeholder="Description" value={newProject.description} onChange={handleInputChange} required />
+                    <input type="text" name="tech" placeholder="Tech (comma separated)" value={newProject.tech} onChange={handleInputChange} required />
+                    <input type="text" name="live" placeholder="Live URL" value={newProject.live} onChange={handleInputChange} />
+                    <input type="text" name="github" placeholder="GitHub URL" value={newProject.github} onChange={handleInputChange} />
+                    <button type="submit">Add Project</button>
+                </form>
+            )}
+
             <div className="projects-grid">
                 {projects.map((project, index) => (
                     <div className="project-card" key={index}>

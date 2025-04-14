@@ -9,6 +9,7 @@ import Activities from './components/Activities';
 import './styles/GlobalStyles.css';
 import 'boxicons/css/boxicons.min.css';
 import Home from './components/Home';
+import Login from './components/LoginPage';
 
 // Custom Hook to Update Page Title Based on Route
 const usePageTitle = () => {
@@ -22,7 +23,8 @@ const usePageTitle = () => {
       resume: "Resume",
       projects: "Projects",
       activities: "Activities",
-      home: "Welcome"
+      home: "Welcome",
+
     };
 
     // Set the document title dynamically
@@ -51,6 +53,7 @@ function App() {
             <Route path="/resume" element={<Resume />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/activities" element={<Activities />} />
+            <Route path="/login" element={<Login />} />
           </Routes>
         </div>
       </div>

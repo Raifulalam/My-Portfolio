@@ -13,7 +13,7 @@ const Home = () => {
                         <p className="subheading">
                             Software Developer | Frontend & Backend Enthusiast | Tech Explorer
                         </p>
-                        <a href="#projects" className="cta-button">View My Work</a>
+                        <a href="/projects" className="cta-button">View My Work</a>
                     </div>
                     <div className="image-section">
                         <img src={HeroImage} alt="Mohammed Raiful" className="hero-image" />
