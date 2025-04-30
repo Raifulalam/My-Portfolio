@@ -24,13 +24,7 @@ p {
 }
 
 /* Mobile-specific styles (screen width 768px and below) */
-@media (max-width: 768px) {
-
-    /* Content area when sidebar is visible */
-    .content {
-        padding-top: 80vh;
-    }
-}
+@media (max-width: 768px) {}
 
 /* Hero Container Styles */
 .hero-container {

@@ -2,8 +2,10 @@
 import React from 'react';
 import '../styles/Home.css';
 import HeroImage from '../assets/Mohammed_Raiful.png';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
+
     return (
         <div className="home-container">
             <section className="hero">
@@ -13,7 +15,8 @@ const Home = () => {
                         <p className="subheading">
                             Software Developer | Frontend & Backend Enthusiast | Tech Explorer
                         </p>
-                        <a href="/projects" className="cta-button">View My Work</a>
+
+                        <Link to={"https://github.com/Raifulalam"}> <a className="cta-button">View My Work</a></Link>
                     </div>
                     <div className="image-section">
                         <img src={HeroImage} alt="Mohammed Raiful" className="hero-image" />

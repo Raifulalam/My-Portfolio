@@ -8,7 +8,7 @@
 
 .projects-title {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     color: #333;
     margin-bottom: 2rem;
 }
@@ -46,7 +46,10 @@
 }
 
 .project-tech {
+
     margin-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .tech-badge {
