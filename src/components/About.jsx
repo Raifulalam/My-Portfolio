@@ -1,7 +1,8 @@
 // src/components/About.js
 import React from 'react';
 import '../styles/About.css';
-import ProfileImg from '../assets/Mohammed_Raiful.png'; // Ensure this path is correct
+import ProfileImg from '../assets/Mohammed_Raiful.png';
+import { Link } from 'react-router-dom';
 
 const About = () => {
     const birthday = "2003-04-23";
@@ -25,7 +26,7 @@ const About = () => {
                 <div className="about-intro">
                     <h1>Hi, I'm Mohammed Raiful Alam</h1>
                     <p>
-                        A full-stack web developer & UI/UX enthusiast passionate about turning ideas into scalable and user-centric digital experiences. With a strong foundation in modern web technologies and a keen eye for detail, I help bring visions to life—code by code.
+                        A Compurt science Engineer &  full-stack web developer  enthusiast passionate about turning ideas into scalable and user-centric digital experiences. With a strong foundation in modern web technologies and a keen eye for detail, I help bring visions to life—code by code.
                     </p>
                     <a href="#contact" className="cta-button">Let’s Connect</a>
                 </div>
@@ -35,6 +36,7 @@ const About = () => {
             <section className="about-skills">
                 <h2>Tech Stack</h2>
                 <ul>
+                    <li>Java</li>
                     <li>JavaScript</li>
                     <li>React.js</li>
                     <li>Node.js</li>
@@ -42,7 +44,6 @@ const About = () => {
                     <li>MongoDB</li>
                     <li>HTML5 & CSS3</li>
                     <li>Python</li>
-                    <li>PHP</li>
                     <li>Git & GitHub</li>
                 </ul>
             </section>
@@ -58,6 +59,7 @@ const About = () => {
                     <div><strong>City:</strong> Mathura, India</div>
                     <div><strong>Degree:</strong> B.Tech in Computer Science</div>
                     <div><strong>Freelance:</strong> Available</div>
+
                 </div>
             </section>
 
