@@ -148,3 +148,35 @@
         padding: 0 1rem;
     }
 }
+
+.contact-us ul {
+    display: flex;
+    list-style: none;
+
+}
+
+i.bx.bxl-linkedin,
+i.bx.bxl-facebook,
+i.bx.bxl-instagram {
+
+    border-radius: 2.5px;
+    font-size: x-large;
+    padding: 3px;
+}
+
+i.bx.bxl-github {
+
+
+
+    border-radius: 2.5px;
+    color: #333;
+    font-size: x-large;
+    padding: 3px;
+    background-color: #a7a4a4;
+}
+
+section.contact-us {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

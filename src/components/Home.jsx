@@ -3,6 +3,7 @@ import React from 'react';
 import '../styles/Home.css';
 import HeroImage from '../assets/Mohammed_Raiful.png';
 import { Link } from 'react-router-dom';
+import Footer from './Footer';
 
 const Home = () => {
 
@@ -23,8 +24,9 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+            <Footer />
 
-            <div className="divider"></div>
+
 
         </div>
     );

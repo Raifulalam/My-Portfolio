@@ -41,12 +41,12 @@ const Sidebar = () => {
                         </li>
                         <li>
                             <NavLink
-                                to="/about"
+                                to="/projects"
                                 className={({ isActive }) =>
                                     isActive ? 'sidebar-link active-link' : 'sidebar-link'
                                 }
                             >
-                                <i className="bx bx-user"></i> About
+                                <i className="bx bx-briefcase"></i> Projects
                             </NavLink>
                         </li>
                         <li>
@@ -62,14 +62,15 @@ const Sidebar = () => {
 
 
 
+
                         <li>
                             <NavLink
-                                to="/projects"
+                                to="/about"
                                 className={({ isActive }) =>
                                     isActive ? 'sidebar-link active-link' : 'sidebar-link'
                                 }
                             >
-                                <i className="bx bx-briefcase"></i> Projects
+                                <i className="bx bx-user"></i> About
                             </NavLink>
                         </li>
                         <li>

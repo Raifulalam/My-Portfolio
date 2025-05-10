@@ -28,7 +28,56 @@ const About = () => {
                     <p>
                         A Compurt science Engineer &  full-stack web developer  enthusiast passionate about turning ideas into scalable and user-centric digital experiences. With a strong foundation in modern web technologies and a keen eye for detail, I help bring visions to life—code by code.
                     </p>
-                    <a href="#contact" className="cta-button">Let’s Connect</a>
+
+                    <section className="contact-us">
+                        <a href="#contact" className="cta-button">Let’s Connect</a>
+                        <ul>
+                            <li>
+                                <Link
+                                    to="https://www.linkedin.com/in/mohammed-raiful-alam-321021278/"
+
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <i className="bx bxl-linkedin" style={{ marginRight: '8px', background: 'blue', color: 'white' }}></i>
+
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    to="https://www.linkedin.com/in/mohammed-raiful-alam-321021278/"
+
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <i className="bx bxl-facebook" style={{ marginRight: '8px', background: 'blue', color: 'white' }}></i>
+
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    to="https://www.linkedin.com/in/mohammed-raiful-alam-321021278/"
+
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <i className="bx bxl-instagram" style={{ marginRight: '8px', background: 'blue', color: 'white' }}></i>
+
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    to="https://github.com/Raifulalam"
+
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <i className="bx bxl-github" style={{ marginRight: '8px' }}></i>
+
+                                </Link>
+                            </li>
+                        </ul>
+                    </section>
                 </div>
             </section>
 
