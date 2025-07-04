@@ -17,8 +17,7 @@ const About = () => {
 
     return (
         <div className="about-container">
-
-            {/* Top Section with Image and Summary */}
+            {/* Top Section with Image and Biography */}
             <section className="about-top">
                 <div className="about-image-wrapper">
                     <img src={ProfileImg} alt="Mohammed Raiful Alam" className="about-image" />
@@ -26,61 +25,34 @@ const About = () => {
                 <div className="about-intro">
                     <h1>Hi, I'm Mohammed Raiful Alam</h1>
                     <p>
-                        A Compurt science Engineer &  full-stack web developer  enthusiast passionate about turning ideas into scalable and user-centric digital experiences. With a strong foundation in modern web technologies and a keen eye for detail, I help bring visions to life—code by code.
+                        I'm a final-year B.Tech Computer Science student at GLA University, Mathura. I completed my schooling at MES Public School, Chhapkaiya-3, Birgunj, Nepal, and pursued my higher secondary education at NI College, Birgunj, Nepal.
                     </p>
-
+                    <p>
+                        I specialize in full-stack development, with a keen interest in solving complex problems through intuitive and efficient digital solutions. My goal is to contribute to impactful projects and continuously improve my skills across the tech stack.
+                    </p>
+                    <p>
+                        In my free time, I enjoy traveling to new places, experimenting in the kitchen, gaming, and staying updated with the latest trends in software and technology. I'm always open to new challenges and collaboration opportunities that push the boundaries of innovation.
+                    </p>
                     <section className="contact-us">
                         <a href="#contact" className="cta-button">Let’s Connect</a>
-                        <ul>
-                            <li>
-                                <Link
-                                    to="https://www.linkedin.com/in/mohammed-raiful-alam-321021278/"
-
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <i className="bx bxl-linkedin" style={{ marginRight: '8px', background: 'blue', color: 'white' }}></i>
-
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    to="https://www.linkedin.com/in/mohammed-raiful-alam-321021278/"
-
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <i className="bx bxl-facebook" style={{ marginRight: '8px', background: 'blue', color: 'white' }}></i>
-
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    to="https://www.linkedin.com/in/mohammed-raiful-alam-321021278/"
-
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <i className="bx bxl-instagram" style={{ marginRight: '8px', background: 'blue', color: 'white' }}></i>
-
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    to="https://github.com/Raifulalam"
-
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <i className="bx bxl-github" style={{ marginRight: '8px' }}></i>
-
-                                </Link>
-                            </li>
+                        <ul className="social-links">
+                            <li><a href="https://www.linkedin.com/in/mohammed-raiful-alam-321021278/" target="_blank" rel="noopener noreferrer"><i className="bx bxl-linkedin"></i></a></li>
+                            <li><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><i className="bx bxl-facebook"></i></a></li>
+                            <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><i className="bx bxl-instagram"></i></a></li>
+                            <li><a href="https://github.com/Raifulalam" target="_blank" rel="noopener noreferrer"><i className="bx bxl-github"></i></a></li>
                         </ul>
                     </section>
                 </div>
             </section>
-
+            {/* Education Journey */}
+            <section className="education-journey">
+                <h2>Education Journey</h2>
+                <ul>
+                    <li><strong>Schooling:</strong> MES Public School, Chhapkaiya-3, Birgunj, Nepal</li>
+                    <li><strong>Higher Secondary:</strong> NI College, Birgunj, Nepal</li>
+                    <li><strong>Undergraduate:</strong> GLA University, Mathura – B.Tech in Computer Science (2022–2026)</li>
+                </ul>
+            </section>
             {/* Skills */}
             <section className="about-skills">
                 <h2>Tech Stack</h2>
@@ -108,23 +80,22 @@ const About = () => {
                     <div><strong>City:</strong> Mathura, India</div>
                     <div><strong>Degree:</strong> B.Tech in Computer Science</div>
                     <div><strong>Freelance:</strong> Available</div>
-
                 </div>
             </section>
 
-            {/* Summary */}
-            <section className="about-summary">
-                <h2>Professional Summary</h2>
-                <p>
-                    With years of experience in both frontend and backend development, I bring a full-stack mindset to every project. My work is focused on clean design, secure code, and performance optimization.
-                </p>
-                <p>
-                    Whether it's building responsive UIs with React, APIs with Node.js, or implementing databases with MongoDB or MySQL, I approach each task with precision and a passion for learning.
-                </p>
-                <p>
-                    I value collaboration, continuous improvement, and staying current with industry trends. Let’s build something amazing together.
-                </p>
+            {/* Hobbies & Interests */}
+            <section className="about-hobbies">
+                <h2>Hobbies & Interests</h2>
+                <ul>
+                    <li>Traveling to new destinations and learning about diverse cultures</li>
+                    <li>Cooking a variety of dishes, from traditional to modern recipes</li>
+                    <li>Engaging in competitive gaming and strategy-based challenges</li>
+                    <li>Reading tech blogs and staying current with emerging innovations</li>
+                    <li>Taking part in hackathons and collaborative coding events</li>
+                </ul>
             </section>
+
+
         </div>
     );
 };

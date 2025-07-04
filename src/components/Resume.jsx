@@ -10,7 +10,7 @@ const Resume = () => {
 
             {/* Objective */}
             <section className="resume-section">
-                <h2>🎯 Objective</h2>
+                <h2>Objective</h2>
                 <p>
                     Motivated software developer with a passion for building web applications, solving real-world problems, and exploring new technologies. I aim to contribute to impactful projects, grow as a full-stack developer, and be part of innovative teams.
                 </p>
@@ -18,7 +18,7 @@ const Resume = () => {
 
             {/* Education */}
             <section className="resume-section">
-                <h2>🎓 Education</h2>
+                <h2>Education</h2>
                 <div className="resume-item">
                     <h3>B.Tech in Computer Science & Engineering</h3>
                     <span className="date">GLA University, Mathura | 2022 – 2026</span>
@@ -27,7 +27,7 @@ const Resume = () => {
 
             {/* Skills */}
             <section className="resume-section">
-                <h2>🛠️ Skills</h2>
+                <h2>Skills</h2>
                 <ul className="skills-list">
                     <li>Languages: HTML, CSS, JavaScript, SQL, C, Python, Java</li>
                     <li>Frameworks: React, Node.js, Express</li>
@@ -39,7 +39,7 @@ const Resume = () => {
 
             {/* Experience */}
             <section className="resume-section">
-                <h2>💼 Internship</h2>
+                <h2>Internship</h2>
 
                 <div className="resume-item">
                     <h3>Web Developer Intern – Zidio Development</h3>
@@ -65,7 +65,7 @@ const Resume = () => {
 
             {/* Projects */}
             <section className="resume-section">
-                <h2>🚀 Projects</h2>
+                <h2>Projects</h2>
 
 
 
@@ -120,7 +120,7 @@ const Resume = () => {
 
             {/* Certifications */}
             <section className="resume-section">
-                <h2>📜 Certifications</h2>
+                <h2>Certifications</h2>
                 <ul className="skills-list">
                     <li>Java DSA Certification</li>
                     <li>Postman API Fundamentals – Student Expert</li>
@@ -131,7 +131,7 @@ const Resume = () => {
 
             {/* Interests */}
             <section className="resume-section">
-                <h2>🌱 Interests & Goals</h2>
+                <h2>Interests & Goals</h2>
                 <ul className="skills-list">
                     <li>Web Development, Cybersecurity, Machine Learning, AI</li>
                     <li>Explore Microservices & Serverless Architectures</li>
@@ -147,7 +147,7 @@ const Resume = () => {
                     download
                     className="download-btn"
                 >
-                    📄 Download Resume (PDF)
+                    Download Resume (PDF)
                 </a>
             </div>
         </div>

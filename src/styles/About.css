@@ -4,7 +4,6 @@
     padding: 3rem 2rem;
     background: #f9f9f9;
     color: #333;
-
     margin: auto;
 }
 
@@ -27,7 +26,6 @@
 .about-image {
     width: 220px;
     height: 220px;
-
     object-fit: cover;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
     border: 5px solid #4d2828a2;
@@ -71,13 +69,31 @@
 .about-skills h2,
 .personal-info h2,
 .about-summary h2 {
-    font-size: 1.8rem;
+    font-size: 1.9rem;
     color: #007BFF;
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
+    border-bottom: 3px solid #007BFF;
+    display: inline-block;
+    padding-bottom: 0.4rem;
     text-align: center;
+    width: 100%;
 }
 
 /* Skills */
+.about-skills {
+    background-color: #ffffff;
+    padding: 2.5rem 2rem;
+    margin: 3rem 0;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-skills:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+}
+
 .about-skills ul {
     list-style: none;
     display: flex;
@@ -96,9 +112,30 @@
     border-radius: 20px;
     font-size: 1rem;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+}
+
+.about-skills li:hover {
+    transform: translateY(-2px);
+    background-color: #d0e7fb;
+    cursor: default;
 }
 
 /* Personal Info Grid */
+.personal-info {
+    background-color: #ffffff;
+    padding: 2.5rem 2rem;
+    margin: 3rem 0;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.personal-info:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+}
+
 .personal-info .info-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -152,22 +189,17 @@
 .contact-us ul {
     display: flex;
     list-style: none;
-
 }
 
 i.bx.bxl-linkedin,
 i.bx.bxl-facebook,
 i.bx.bxl-instagram {
-
     border-radius: 2.5px;
     font-size: x-large;
     padding: 3px;
 }
 
 i.bx.bxl-github {
-
-
-
     border-radius: 2.5px;
     color: #333;
     font-size: x-large;
@@ -179,4 +211,81 @@ section.contact-us {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+/* Common section styling */
+.about-hobbies,
+.education-journey {
+    background-color: #ffffff;
+    padding: 2.5rem 2rem;
+    margin: 3rem 0;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-hobbies:hover,
+.education-journey:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+}
+
+.about-hobbies h2,
+.education-journey h2 {
+    font-size: 1.9rem;
+    color: #007BFF;
+    margin-bottom: 1.2rem;
+    border-bottom: 3px solid #007BFF;
+    display: inline-block;
+    padding-bottom: 0.4rem;
+}
+
+.about-hobbies ul,
+.education-journey ul {
+    padding-left: 1.5rem;
+    list-style-type: disc;
+    color: #444;
+    line-height: 1.8;
+    font-size: 1.05rem;
+    margin-top: 1rem;
+}
+
+.about-hobbies ul li,
+.education-journey ul li {
+    margin-bottom: 0.75rem;
+    transition: transform 0.2s ease;
+}
+
+.about-hobbies ul li:hover,
+.education-journey ul li:hover {
+    transform: translateX(6px);
+    color: #007BFF;
+    cursor: default;
+}
+
+/* Responsive (Mobile First) */
+@media (max-width: 768px) {
+
+    .about-hobbies,
+    .education-journey,
+    .about-skills,
+    .personal-info {
+        padding: 1.2rem;
+        margin: 1.5rem 0;
+        border-radius: 8px;
+    }
+
+    .about-hobbies h2,
+    .education-journey h2,
+    .about-skills h2,
+    .personal-info h2 {
+        font-size: 1.5rem;
+    }
+
+    .about-hobbies ul,
+    .education-journey ul,
+    .about-skills ul {
+        padding-left: 1rem;
+        font-size: 0.95rem;
+    }
 }
