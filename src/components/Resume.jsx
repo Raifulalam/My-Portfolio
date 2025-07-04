@@ -143,7 +143,7 @@ const Resume = () => {
             {/* Download Button */}
             <div className="resume-download">
                 <a
-                    href={`${process.env.PUBLIC_URL}/files/Mohammed_Raiful_Resume.pdf`}
+                    href={`${process.env.PUBLIC_URL}/files/My_Resume.pdf`}
                     download
                     className="download-btn"
                 >
