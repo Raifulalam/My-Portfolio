@@ -93,6 +93,7 @@ const Sidebar = () => {
                                 <i className="bx bx-trophy"></i> Activities
                             </NavLink>
                         </li>
+
                     </ul>
                 </nav>
                 {/* Close Button */}

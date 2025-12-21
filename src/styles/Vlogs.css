@@ -2,7 +2,7 @@
 
 .vlogs-container {
     padding: 2rem;
-    background: #f9f9f9;
+    background: linear-gradient(100deg, #100b0b 50%, #121212 50%);
     min-height: 100vh;
     box-sizing: border-box;
 }
@@ -14,11 +14,11 @@
 
 .vlogs-header h1 {
     font-size: 2.5rem;
-    color: #333;
+    color: #ffffff;
 }
 
 .vlogs-header p {
-    color: #666;
+    color: #fffefe;
     margin-bottom: 2rem;
 }
 

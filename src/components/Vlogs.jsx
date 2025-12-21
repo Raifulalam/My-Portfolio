@@ -13,7 +13,7 @@ const Vlogs = () => {
 
     // Fetch vlogs on component mount
     useEffect(() => {
-        axios.get(`${BaseUrl}/vlogs/vlogs`)
+        axios.get(`https://port-backend-7.onrender.com/api/vlogs/vlogs`)
             .then((res) => {
                 setVlogs(res.data);
                 setLoading(false);

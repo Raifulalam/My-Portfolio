@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import '../styles/Projects.css';
-
+import HeroImage from '../assets/Mohammed_Raiful.png';
 const BaseUrl = process.env.REACT_APP_API_URL;
 
 const Projects = () => {
@@ -24,7 +24,7 @@ const Projects = () => {
     const fetchProjects = async () => {
         setLoading(true);
         try {
-            const res = await fetch(`${BaseUrl}/projects/projects`);
+            const res = await fetch(`https://port-backend-7.onrender.com/api/projects/projects`);
             const data = await res.json();
             setProjects(data);
         } catch (error) {
@@ -79,6 +79,7 @@ const Projects = () => {
     const projectCards = useMemo(() =>
         projects.map((project, index) => (
             <div className="project-card" key={project._id || index}>
+                <img src={HeroImage} alt="img" />
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
                 <div className="project-tech">

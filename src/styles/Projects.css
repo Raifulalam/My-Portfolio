@@ -2,13 +2,13 @@
     padding: 2rem;
     margin: auto;
     font-family: 'Segoe UI', sans-serif;
-    background: #f9f9f9;
+    background: linear-gradient(235deg, #100b0b 50%, #121212 50%);
 }
 
 .projects-title {
     text-align: center;
     font-size: 1.8rem;
-    color: #333;
+    color: #fffefe;
     margin-bottom: 2rem;
 }
 
@@ -19,19 +19,62 @@
 }
 
 .project-card {
-    background-color: #fdfdfd;
     border: 1px solid #e1e1e1;
-    padding: 1.5rem;
+    padding: 1rem;
     border-radius: 10px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden;
+    background: #1e1e1e;
+
+    /* animation base */
+    animation-duration: 0.8s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
 }
 
+/* Odd → Left to Right */
+.project-card:nth-child(odd) {
+    animation-name: slideFromLeft;
+}
+
+/* Even → Right to Left */
+.project-card:nth-child(even) {
+    animation-name: slideFromRight;
+}
+
+/* LEFT → RIGHT */
+@keyframes slideFromLeft {
+    from {
+        transform: translateX(-40px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* RIGHT → LEFT */
+@keyframes slideFromRight {
+    from {
+        transform: translateX(40px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Hover still works */
 .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 16px rgba(0, 0, 0, 0.1);
+    transform: translateY(-6px);
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.15);
 }
 
+/* Text styling */
 .project-card h3 {
     margin-top: 0;
     font-size: 1.3rem;
@@ -41,7 +84,19 @@
 .project-card p {
     font-size: 0.95rem;
     margin: 0.5rem 0 1rem;
-    color: #555;
+    color: #ffffff;
+}
+
+
+.project-card img {
+    width: 100%;
+    margin-bottom: 1rem;
+    position: absolute;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.6;
+    height: 100%;
 }
 
 .project-tech {

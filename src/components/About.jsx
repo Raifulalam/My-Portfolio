@@ -33,15 +33,7 @@ const About = () => {
                     <p>
                         In my free time, I enjoy traveling to new places, experimenting in the kitchen, gaming, and staying updated with the latest trends in software and technology. I'm always open to new challenges and collaboration opportunities that push the boundaries of innovation.
                     </p>
-                    <section className="contact-us">
-                        <a href="#contact" className="cta-button">Let’s Connect</a>
-                        <ul className="social-links">
-                            <li><a href="https://www.linkedin.com/in/mohammed-raiful-alam-321021278/" target="_blank" rel="noopener noreferrer"><i className="bx bxl-linkedin"></i></a></li>
-                            <li><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><i className="bx bxl-facebook"></i></a></li>
-                            <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><i className="bx bxl-instagram"></i></a></li>
-                            <li><a href="https://github.com/Raifulalam" target="_blank" rel="noopener noreferrer"><i className="bx bxl-github"></i></a></li>
-                        </ul>
-                    </section>
+
                 </div>
             </section>
             {/* Education Journey */}
@@ -77,7 +69,7 @@ const About = () => {
                     <div><strong>Birthday:</strong> 23 April 2003</div>
                     <div><strong>Age:</strong> {age}</div>
                     <div><strong>Phone:</strong> +91 8235787151</div>
-                    <div><strong>City:</strong> Mathura, India</div>
+                    <div><strong>City:</strong> Birgunj, Nepal</div>
                     <div><strong>Degree:</strong> B.Tech in Computer Science</div>
                     <div><strong>Freelance:</strong> Available</div>
                 </div>

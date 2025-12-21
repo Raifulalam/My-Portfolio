@@ -3,23 +3,36 @@
     font-family: 'Segoe UI', sans-serif;
     margin: 0;
     padding: 0;
-    background: #f8f9fa;
-    color: #333;
-    position: fixed;
-    width: 100%;
-    z-index: 1;
-    /* Update z-index to a positive value */
+
 }
 
 /* HERO SECTION */
 .hero {
-    background: linear-gradient(135deg, #ffffff 50%, #111 50%);
-    color: #111;
+    background: linear-gradient(135deg, #100b0b 50%, #111 50%);
+    display: flex;
+    flex-direction: column;
+
     padding: 4rem 2rem;
-    min-height: 70vh;
+    color: #ffffff;
+
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.skills-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    padding: 4rem 4rem;
+
+}
+
+.skills-container hr {
+    height: 180px;
+    margin-right: 5px;
+    border: 1px solid yellowgreen;
 }
 
 .hero-content {
@@ -30,6 +43,100 @@
     width: 100%;
     flex-wrap: wrap;
     gap: 2rem;
+}
+
+.online-profile-links {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+.online-profile-links a {
+    color: #00e0ff;
+}
+
+.online-profile-links a:hover {
+    color: black;
+}
+
+
+.skills {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.skills-list li {
+    background-color: #e9ecef;
+    padding: 0.75rem 1.5rem;
+    border-radius: 20px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+
+.skills-list li:nth-child(odd) {
+    background: linear-gradient(135deg,
+            #656a6f,
+            #000000,
+            #fda1a1,
+            #e4ff32);
+    color: #ffffff;
+    animation: moveRight 3s ease-in-out infinite;
+}
+
+.skills-list li:nth-child(odd):hover {
+    transform: translateY(30px);
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+.skills-list li:nth-child(even) {
+    background: linear-gradient(135deg,
+            #edc55e,
+            #585858,
+            #000000,
+            #5b9bdf);
+    color: #ffffff;
+    animation: moveLeft 3s ease-in-out infinite;
+}
+
+@keyframes moveRight {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateY(15px);
+    }
+}
+
+@keyframes moveLeft {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-15px);
+    }
 }
 
 .text-section {
@@ -46,7 +153,7 @@
 .subheading {
     font-size: 1.25rem;
     margin-bottom: 1.5rem;
-    color: #555;
+    color: #ffffff;
 }
 
 .highlight {
@@ -54,23 +161,65 @@
 }
 
 .cta-button {
-    background-color: #007BFF;
-    color: #fff;
+
+    position: relative;
     padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
     font-weight: 600;
-    transition: background 0.3s ease;
-    z-index: 10;
-
+    color: #fff;
+    background: #162d3e;
+    border: none;
+    border-radius: 6px;
     cursor: pointer;
-    margin: 0px;
+    z-index: 1;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    margin-right: 8px;
+    box-shadow: 1px 1px 2px 1px yellow;
 }
 
-.cta-button:hover {
-    background-color: #0056b3;
+/* Moving border layer */
+.cta-button::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(135deg,
+            #007BFF,
+            #4eb300,
+            #0a0a0a,
+            #007BFF);
+    background-size: 300% 300%;
+    border-radius: 8px;
+    z-index: -1;
+    animation: borderMove 3s linear infinite;
 }
+
+/* Inner background */
+.cta-button::after {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    background: #162d3e;
+    border-radius: 4px;
+    z-index: -1;
+}
+
+/* Hover effect */
+.cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 2px 2px solid linear-gradient(pink, blue);
+}
+
+/* Border animation */
+@keyframes borderMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 300% 50%;
+    }
+}
+
 
 /* IMAGE STYLING */
 .image-section {
@@ -87,26 +236,27 @@
     object-fit: cover;
     border: 5px solid #007BFF;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
 }
 
-/* DIVIDER */
-.divider {
-    height: 60px;
-    background: linear-gradient(to right, white 0%, black 100%);
-    transform: skewY(-10deg);
-    transform-origin: top left;
-    content: "Hello";
+.hero-image::before {
+    content: "";
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    border: 2px solid #00e0ff;
+    animation: rotateBorder 6s linear infinite;
 }
 
-.divider::before {
-    content: "I specialize in building modern, performant web apps using the latest technologies like React, Node.js, and more.";
-    color: #fff;
-    font-size: 1rem;
-    font-weight: bold;
-    display: block;
-    text-align: center;
-    width: 100%;
-    padding-top: 10px;
+@keyframes rotateBorder {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* RESPONSIVE DESIGN */
@@ -116,8 +266,12 @@
         text-align: center;
     }
 
+    .skills-container {
+        padding: 0%;
+    }
+
     .text-section h1 {
-        font-size: 2.25rem;
+        font-size: 1.5rem;
     }
 
     .hero-image {
@@ -126,10 +280,14 @@
         margin-top: 2rem;
     }
 
-    .divider {
-        transform: none;
-        height: 40px;
+    .skills-list li {
+        font-size: 12px;
+        padding: 5px;
+        margin: 0%;
+
     }
+
+
 }
 
 html {
@@ -205,24 +363,6 @@ html {
     font-size: 2rem;
     margin-bottom: 1rem;
     color: #111;
-}
-
-.skills-list {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-.skills-list li {
-    background-color: #e9ecef;
-    padding: 0.75rem 1.5rem;
-    border-radius: 20px;
-    font-weight: 500;
-    transition: background-color 0.3s;
 }
 
 .skills-list li:hover {

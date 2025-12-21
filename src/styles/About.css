@@ -1,10 +1,23 @@
-/* Container */
 .about-container {
-    font-family: 'Segoe UI', sans-serif;
-    padding: 3rem 2rem;
-    background: #f9f9f9;
-    color: #333;
+    padding: 2rem;
     margin: auto;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(100deg, #100b0b 50%, #121212 50%);
+    color: #fff;
+    margin: auto;
+    animation: moveLeft 2s ease;
+}
+
+@keyframes moveLeft {
+
+    0%,
+    100% {
+        transform: translateX(0%);
+    }
+
+    50% {
+        transform: translateX(-10px);
+    }
 }
 
 /* Top Section */
@@ -19,16 +32,17 @@
 
 /* Profile Image */
 .about-image-wrapper {
-    flex: 1 1 250px;
+    flex: 1 1 50px;
     text-align: center;
 }
 
 .about-image {
-    width: 220px;
-    height: 220px;
+    width: 300px;
+    height: 300px;
     object-fit: cover;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
     border: 5px solid #4d2828a2;
+    animation: moveLeft 1s ease;
 }
 
 /* Intro Text */
@@ -36,6 +50,7 @@
     flex: 1 1 400px;
     text-align: left;
 }
+
 
 .about-intro h1 {
     font-size: 2.2rem;
@@ -46,7 +61,7 @@
 .about-intro p {
     font-size: 1.1rem;
     line-height: 1.6;
-    color: #555;
+    color: #ffffff;
 }
 
 .cta-button {
@@ -75,15 +90,14 @@
     border-bottom: 3px solid #007BFF;
     display: inline-block;
     padding-bottom: 0.4rem;
-    text-align: center;
+    text-align: left;
     width: 100%;
 }
 
 /* Skills */
 .about-skills {
-    background-color: #ffffff;
+
     padding: 2.5rem 2rem;
-    margin: 3rem 0;
     border-radius: 10px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -101,13 +115,13 @@
     gap: 1rem;
     justify-content: center;
     padding: 0;
-    margin: 0 auto 2rem;
+
     max-width: 900px;
 }
 
 .about-skills li {
-    background-color: #e1ecf4;
-    color: #333;
+
+    color: #ffffff;
     padding: 0.6rem 1.2rem;
     border-radius: 20px;
     font-size: 1rem;
@@ -123,9 +137,8 @@
 
 /* Personal Info Grid */
 .personal-info {
-    background-color: #ffffff;
+
     padding: 2.5rem 2rem;
-    margin: 3rem 0;
     border-radius: 10px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -144,7 +157,7 @@
 }
 
 .info-grid div {
-    background: #fff;
+
     border-left: 4px solid #007BFF;
     padding: 1rem 1.2rem;
     border-radius: 5px;
@@ -174,6 +187,8 @@
 
     .about-intro p {
         font-size: 1rem;
+
+        text-align: justify;
     }
 
     .cta-button {
@@ -182,7 +197,11 @@
 
     .about-summary p {
         font-size: 1rem;
-        padding: 0 1rem;
+
+    }
+
+    .about-container {
+        padding: 1rem;
     }
 }
 
@@ -216,9 +235,9 @@ section.contact-us {
 /* Common section styling */
 .about-hobbies,
 .education-journey {
-    background-color: #ffffff;
+
     padding: 2.5rem 2rem;
-    margin: 3rem 0;
+
     border-radius: 10px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -233,7 +252,7 @@ section.contact-us {
 .about-hobbies h2,
 .education-journey h2 {
     font-size: 1.9rem;
-    color: #007BFF;
+
     margin-bottom: 1.2rem;
     border-bottom: 3px solid #007BFF;
     display: inline-block;
@@ -244,7 +263,7 @@ section.contact-us {
 .education-journey ul {
     padding-left: 1.5rem;
     list-style-type: disc;
-    color: #444;
+    color: #ffffff;
     line-height: 1.8;
     font-size: 1.05rem;
     margin-top: 1rem;
