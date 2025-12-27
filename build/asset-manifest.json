@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.css": "/static/css/main.be2d8f1c.css",
+    "main.js": "/static/js/main.e2dce84a.js",
+    "static/js/453.6af63212.chunk.js": "/static/js/453.6af63212.chunk.js",
+    "static/media/hero-bg.jpg": "/static/media/hero-bg.65b02b0b92d497131067.jpg",
+    "static/media/boxicons.svg": "/static/media/boxicons.9e2b21b135bc7d4c803f.svg",
+    "static/media/RMS.png": "/static/media/RMS.231156a98d69e3e8ecfd.png",
+    "static/media/Music.png": "/static/media/Music.d39dc360d18190059cb6.png",
+    "static/media/Git.png": "/static/media/Git.8db28918769566a24162.png",
+    "static/media/boxicons.eot": "/static/media/boxicons.65a8ce52fc5427e8f94d.eot",
+    "static/media/Postman.png": "/static/media/Postman.7ba3e92a56d684beb4bf.png",
+    "static/media/OB.png": "/static/media/OB.7ab8a30951ed04c91593.png",
+    "static/media/EEASS.png": "/static/media/EEASS.12210d39d12b53a40e74.png",
+    "static/media/certificate intern.jpg": "/static/media/certificate intern.2336c43dc5d8218b816e.jpg",
+    "static/media/Lucky.png": "/static/media/Lucky.fa9a81dc43f2f19cc444.png",
+    "static/media/boxicons.woff": "/static/media/boxicons.d12afc36557395143e4b.woff",
+    "static/media/boxicons.ttf": "/static/media/boxicons.db9ddb1898dbd76badca.ttf",
+    "static/media/SE.png": "/static/media/SE.1df6158d5f7b58253da6.png",
+    "static/media/Leadership.png": "/static/media/Leadership.e681c86bdb3443ad75a3.png",
+    "static/media/EB.png": "/static/media/EB.9512df5cb8d6cb0ff151.png",
+    "static/media/MIS.png": "/static/media/MIS.c14b275dd9848bff1c63.png",
+    "static/media/ExamPortal.png": "/static/media/ExamPortal.b16a39511a2a2fad48f8.png",
+    "static/media/R.png": "/static/media/R.9be8068c306622c53b2d.png",
+    "static/media/Mohammed_Raiful.png": "/static/media/Mohammed_Raiful.c48c6e09c6a79f4c0a68.png",
+    "static/media/NPTEL STAR CERTIFICATE.jpg": "/static/media/NPTEL STAR CERTIFICATE.361e1c23455e8d06f86b.jpg",
+    "static/media/boxicons.woff2": "/static/media/boxicons.df635aaf04cd75132f62.woff2",
+    "static/media/EMS.png": "/static/media/EMS.8bb54354e885a34bfb90.png",
+    "static/media/zidio.jpg": "/static/media/zidio.94b43d7ca1817cae311b.jpg",
+    "index.html": "/index.html",
+    "main.be2d8f1c.css.map": "/static/css/main.be2d8f1c.css.map",
+    "main.e2dce84a.js.map": "/static/js/main.e2dce84a.js.map",
+    "453.6af63212.chunk.js.map": "/static/js/453.6af63212.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.be2d8f1c.css",
+    "static/js/main.e2dce84a.js"
+  ]
+}

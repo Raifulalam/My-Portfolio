@@ -1,8 +1,20 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import '../styles/Projects.css';
 import HeroImage from '../assets/Mohammed_Raiful.png';
+import EMS from '../assets/EMS.png';
+import RMS from '../assets/RMS.png';
+import Lucky from '../assets/Lucky.png';
+import Music from '../assets/Music.png';
+import Exam from '../assets/ExamPortal.png';
 const BaseUrl = process.env.REACT_APP_API_URL;
 
+const Image = [
+    { id: 1, img: Music },
+    { id: 2, img: Lucky },
+    { id: 3, img: RMS },
+    { id: 4, img: EMS },
+    { id: 5, img: Exam }
+]
 const Projects = () => {
     const [projects, setProjects] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -79,8 +91,9 @@ const Projects = () => {
     const projectCards = useMemo(() =>
         projects.map((project, index) => (
             <div className="project-card" key={project._id || index}>
-                <img src={HeroImage} alt="img" />
                 <h3>{project.title}</h3>
+                <img src={Image[index].img} alt={`${project.title}`} />
+
                 <p>{project.description}</p>
                 <div className="project-tech">
                     {project.tech.map((tech, i) => (
