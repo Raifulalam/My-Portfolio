@@ -1,0 +1,123 @@
+.bot-wrapper {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.bot-toggle {
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 16px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+.bot-toggle:hover {
+    transform: scale(1.1);
+}
+
+.bot-window {
+    width: 320px;
+    max-height: 450px;
+    background: #0b0f14;
+    border-radius: 14px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin-bottom: 10px;
+    animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.bot-header {
+    background: #007bff;
+    color: #fff;
+    padding: 12px 16px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-btn {
+    cursor: pointer;
+}
+
+.bot-messages {
+    flex: 1;
+    padding: 12px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: #0b0f14;
+}
+
+.bot-message {
+    padding: 8px 12px;
+    border-radius: 12px;
+    max-width: 80%;
+}
+
+.bot-message.bot {
+    background: rgba(0, 123, 255, 0.2);
+    align-self: flex-start;
+}
+
+.bot-message.user {
+    background: #4dabf7;
+    align-self: flex-end;
+    color: #000;
+}
+
+.bot-input {
+    display: flex;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bot-input input {
+    flex: 1;
+    padding: 10px 12px;
+    border: none;
+    background: #111;
+    color: #fff;
+    outline: none;
+}
+
+.bot-input button {
+    padding: 10px 14px;
+    border: none;
+    background: #007bff;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.bot-input button:hover {
+    background: #0056b3;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .bot-window {
+        width: 90vw;
+    }
+}

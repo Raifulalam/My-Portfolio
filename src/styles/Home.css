@@ -1,370 +1,147 @@
-/* Reset & container */
+/* CONTAINER */
 .home-container {
-    font-family: 'Segoe UI', sans-serif;
-    margin: 0;
-    padding: 0;
-
+    background: radial-gradient(circle at top, #0f2027, #000);
+    min-height: 100vh;
+    color: #fff;
+    font-family: "Segoe UI", sans-serif;
 }
 
-/* HERO SECTION */
+/* HERO */
 .hero {
-    background: linear-gradient(135deg, #13c2c2 50%, #111 50%);
-    display: flex;
-    flex-direction: column;
-
-    padding: 4rem 2rem;
-    color: #ffffff;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.skills-container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-    padding: 4rem 4rem;
-
+    padding: 6rem 2rem;
 }
 
-.skills-container hr {
-    height: 180px;
-    margin-right: 5px;
-    border: 1px solid yellowgreen;
-}
-
-.hero-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1200px;
+.hero-card {
+    max-width: 1100px;
     width: 100%;
-    flex-wrap: wrap;
-    gap: 2rem;
-}
-
-.online-profile-links {
-    margin-top: 15px;
-    display: flex;
-    flex-direction: column;
-
-
-}
-
-.online-profile-links a {
-    color: #00e0ff;
-}
-
-.online-profile-links a:hover {
-    color: black;
-}
-
-
-.skills {
-    margin-top: 20px;
-    font-size: 20px;
-    color: #ffffff;
-}
-
-
-.skills-list {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-.skills-list li {
-    background-color: #e9ecef;
-    padding: 0.75rem 1.5rem;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 3rem;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(15px);
     border-radius: 20px;
-    font-weight: 500;
-    transition: background-color 0.3s;
+    padding: 3rem;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
 }
 
-
-.skills-list li:nth-child(odd) {
-    background: linear-gradient(135deg,
-            #656a6f,
-            #000000,
-            #fda1a1,
-            #e4ff32);
-    color: #ffffff;
-    animation: moveRight 3s ease-in-out infinite;
-}
-
-.skills-list li:nth-child(odd):hover {
-    transform: translateY(30px);
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-
-}
-
-.skills-list li:nth-child(even) {
-    background: linear-gradient(135deg,
-            #edc55e,
-            #585858,
-            #000000,
-            #5b9bdf);
-    color: #ffffff;
-    animation: moveLeft 3s ease-in-out infinite;
-}
-
-@keyframes moveRight {
-
-    0%,
-    100% {
-        transform: translateX(0);
-    }
-
-    50% {
-        transform: translateY(15px);
-    }
-}
-
-@keyframes moveLeft {
-
-    0%,
-    100% {
-        transform: translateX(0);
-    }
-
-    50% {
-        transform: translateX(-15px);
-    }
-}
-
-.text-section {
-    flex: 1;
-    max-width: 600px;
-}
-
-.text-section h1 {
+/* TEXT */
+.hero-text h1 {
     font-size: 3rem;
-    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+
+.hero-text h1 span {
+    color: #4dabf7;
+}
+
+.hero-text h2 {
+    font-weight: 400;
+    opacity: 0.85;
     margin-bottom: 1rem;
 }
 
-.subheading {
-    font-size: 1.25rem;
-    margin-bottom: 1.5rem;
-    color: #ffffff;
+.hero-text p {
+    max-width: 500px;
+    line-height: 1.6;
+    opacity: 0.9;
 }
 
-.highlight {
-    color: #007BFF;
+/* BUTTONS */
+.hero-buttons {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
 }
 
-.cta-button {
-
-    position: relative;
-    padding: 0.75rem 1.5rem;
-    font-weight: 600;
-    color: #fff;
-    background: #162d3e;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    z-index: 1;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-    margin-right: 8px;
-    box-shadow: 1px 1px 2px 1px yellow;
-}
-
-/* Moving border layer */
-.cta-button::before {
-    content: "";
-    position: absolute;
-    inset: -2px;
-    background: linear-gradient(135deg,
-            #007BFF,
-            #4eb300,
-            #0a0a0a,
-            #007BFF);
-    background-size: 300% 300%;
+.btn {
+    padding: 0.8rem 1.6rem;
     border-radius: 8px;
-    z-index: -1;
-    animation: borderMove 3s linear infinite;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
 }
 
-/* Inner background */
-.cta-button::after {
-    content: "";
-    position: absolute;
-    inset: 2px;
-    background: #162d3e;
-    border-radius: 4px;
-    z-index: -1;
+.btn.primary {
+    background: #4dabf7;
+    color: #000;
 }
 
-/* Hover effect */
-.cta-button:hover {
-    transform: scale(1.05);
-    box-shadow: 2px 2px solid linear-gradient(pink, blue);
+.btn.primary:hover {
+    background: #74c0fc;
 }
 
-/* Border animation */
-@keyframes borderMove {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    100% {
-        background-position: 300% 50%;
-    }
+.btn.secondary {
+    border: 1px solid #4dabf7;
+    color: #4dabf7;
 }
 
+.btn.secondary:hover {
+    background: rgba(77, 171, 247, 0.1);
+}
 
-/* IMAGE STYLING */
-.image-section {
-    flex: 1;
+/* SOCIALS */
+.hero-socials {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1.2rem;
+}
+
+.hero-socials a {
+    font-size: 1.4rem;
+    color: #4dabf7;
+    transition: 0.3s;
+}
+
+.hero-socials a:hover {
+    transform: translateY(-3px);
+}
+
+/* IMAGE */
+.hero-image-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.hero-image {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid #007BFF;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-
-}
-
-.hero-image::before {
-    content: "";
-    position: absolute;
+.hero-image-wrapper img {
     width: 260px;
     height: 260px;
     border-radius: 50%;
-    border: 2px solid #00e0ff;
-    animation: rotateBorder 6s linear infinite;
+    object-fit: cover;
+    border: 4px solid rgba(77, 171, 247, 0.6);
 }
 
-@keyframes rotateBorder {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-/* RESPONSIVE DESIGN */
-@media (max-width: 768px) {
-    .hero-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .skills-container {
-        padding: 0%;
-    }
-
-    .text-section h1 {
-        font-size: 1.5rem;
-    }
-
-    .hero-image {
-        width: 200px;
-        height: 200px;
-        margin-top: 2rem;
-    }
-
-    .skills-list li {
-        font-size: 12px;
-        padding: 5px;
-        margin: 0%;
-
-    }
-
-
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-/* BIO PARAGRAPH */
-.bio {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-    color: #444;
-}
-
-/* BUTTON GROUP (for GitHub, Resume, Contact) */
-.button-group {
+/* SKILLS STRIP */
+.skills-strip {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
+    justify-content: center;
+    gap: 0.8rem;
+    padding: 2rem;
 }
 
-.resume-button,
-.contact-button {
-    background-color: #28a745;
-    color: #fff;
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: background 0.3s ease;
-    cursor: pointer;
+.skills-strip span {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
 }
 
-.resume-button:hover {
-    background-color: #218838;
-}
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .hero-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 2rem;
+    }
 
-.contact-button {
-    background-color: #6f42c1;
-}
+    .hero-buttons {
+        justify-content: center;
+    }
 
-.contact-button:hover {
-    background-color: #563d7c;
-}
-
-/* SOCIAL LINKS */
-.social-links {
-    margin-top: 1rem;
-}
-
-.social-links a {
-    margin-right: 1rem;
-    color: #007BFF;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-.social-links a:hover {
-    color: #0056b3;
-}
-
-/* SKILLS SECTION */
-.skills-section {
-    padding: 3rem 2rem;
-    background-color: #fff;
-    text-align: center;
-}
-
-.skills-section h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: #111;
-}
-
-.skills-list li:hover {
-    background-color: #d6d8db;
+    .hero-socials {
+        justify-content: center;
+    }
 }

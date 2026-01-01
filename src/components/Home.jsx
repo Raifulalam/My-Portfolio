@@ -1,92 +1,81 @@
 // src/components/Home.js
-import React from 'react';
-import '../styles/Home.css';
-import HeroImage from '../assets/Mohammed_Raiful.png';
-import { Link } from 'react-router-dom';
-import About from './About';
-import Projects from './Projects';
-import Vlogs from './Vlogs';
-import Activities from './Activities';
-import { FaGithub, FaLinkedin, FaFacebook, FaInstagramSquare, FaTwitter, FaEnvelope } from 'react-icons/fa';
-const Home = () => {
+import React from "react";
+import "../styles/Home.css";
+import HeroImage from "../assets/Mohammed_Raiful.png";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import Projects from "./Projects.jsx";
+import Bot from "../Bot.jsx";
+import About from "./About.jsx";
+import Vlogs from "./Vlogs.jsx";
+import Activities from "./Activities.jsx";
 
+const Home = () => {
     return (
         <div className="home-container">
-            <section className="hero">
-                <div className="hero-content">
 
-                    <div className="text-section">
-                        <h1>Hello, I'm <span className="highlight">Mohammed Raiful Alam</span></h1>
-                        <p className="subheading">
-                            Software Developer | Frontend & Backend Enthusiast | Tech Explorer
+            {/* HERO */}
+            <section className="hero">
+                <div className="hero-card">
+
+                    {/* LEFT */}
+                    <div className="hero-text">
+                        <h1>
+                            Mohammed <span>Raiful Alam</span>
+                        </h1>
+
+                        <h2>Full Stack Developer</h2>
+
+                        <p>
+                            I build scalable, user-focused web applications using modern
+                            technologies like React, Node.js, and MongoDB.
                         </p>
 
-                        <Link to={"https://github.com/Raifulalam"}> <a className="cta-button">View My Work</a></Link>
-                        <a
-                            href={`${process.env.PUBLIC_URL}/files/My_Resume.pdf`}
-                            download
-                            className="cta-button"
-                        >
-                            Download Resume (PDF)
-                        </a>
+                        <div className="hero-buttons">
+                            <a href="#projects" className="btn primary">View Projects</a>
+                            <a
+                                href={`${process.env.PUBLIC_URL}/files/My_Resume.pdf`}
+                                download
+                                className="btn secondary"
+                            >
+                                Download Resume
+                            </a>
+                        </div>
+
+                        <div className="hero-socials">
+                            <a href="https://github.com/Raifulalam" target="_blank" rel="noreferrer">
+                                <FaGithub />
+                            </a>
+                            <a href="https://linkedin.com" target="_blank" rel="noreferrer">
+                                <FaLinkedin />
+                            </a>
+                            <a href="mailto:raifulalam0123@gmail.com">
+                                <FaEnvelope />
+                            </a>
+                        </div>
                     </div>
-                    <div className="image-section">
-                        <img src={HeroImage} alt="Mohammed Raiful" className="hero-image" />
+
+                    {/* RIGHT */}
+                    <div className="hero-image-wrapper">
+                        <img src={HeroImage} alt="Mohammed Raiful Alam" />
                     </div>
+
                 </div>
-                <div className="skills-container">
-                    <hr />
-                    <div className="online-profile-links">
-                        <a href="https://github.com/Raifulalam" target="_blank" rel="noopener noreferrer">
-                            <FaGithub size={24} />
-                        </a>
-                        <a href="https://linkedin.com/in/YOUR-LINKEDIN" target="_blank" rel="noopener noreferrer">
-                            <FaLinkedin size={24} />
-                        </a>
-                        <a href="https://github.com/Raifulalam" target="_blank" rel="noopener noreferrer">
-                            <FaFacebook size={24} />
-                        </a>
-                        <a href="https://linkedin.com/in/YOUR-LINKEDIN" target="_blank" rel="noopener noreferrer">
-                            <FaInstagramSquare size={24} />
-                        </a>
-                        <a href="https://linkedin.com/in/YOUR-LINKEDIN" target="_blank" rel="noopener noreferrer">
-                            <FaTwitter size={24} />
-                        </a>
-                        <a href="mailto:raifulalam0123@gmail.com">
-                            <FaEnvelope size={24} />
-                        </a>
-
-                    </div>
-                    <div className="skills">
-
-                        <ul className="skills-list">
-                            <li>JavaScript (ES6+)</li>
-                            <li>React.js</li>
-                            <li>Node.js</li>
-                            <li>Express.js</li>
-                            <li>MongoDB</li>
-                            <li>HTML5 & CSS3</li>
-                            <li>Git & GitHub</li>
-                            <li>RESTful APIs</li>
-                            <li>Java</li>
-                            <li>Python</li>
-                            <li>PHP</li>
-                            <li>MySQL</li>
-
-                        </ul>
-                    </div>
-                </div>
-
             </section>
-            <About />
 
+            {/* SKILLS */}
+            <section className="skills-strip">
+                {[
+                    "JavaScript", "React", "Node.js", "Express",
+                    "MongoDB", "MySQL", "Java", "Git", "REST APIs"
+                ].map(skill => (
+                    <span key={skill}>{skill}</span>
+                ))}
+            </section>
             <Projects />
+            <Bot />
+            <About />
             <Activities />
             <Vlogs />
-
-
-
-
         </div>
     );
 };

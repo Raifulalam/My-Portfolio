@@ -2,116 +2,117 @@
     max-width: 1200px;
     margin: auto;
     padding: 50px 20px;
-    font-family: "Segoe UI", sans-serif;
+    font-family: 'Segoe UI', sans-serif;
     text-align: center;
 }
 
 .certifications-title {
-    font-size: 34px;
+    font-size: 36px;
     font-weight: 700;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    color: #007BFF;
 }
 
-/* ===== Carousel ===== */
-.carousel {
-    position: relative;
-    overflow: hidden;
-}
-
-.carousel-track {
+/* Carousel */
+.certificates-carousel {
     display: flex;
-    transition: transform 0.6s ease;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 20px;
+    padding-bottom: 10px;
+    cursor: grab;
 }
 
-.slide {
-    min-width: 100%;
-    opacity: 0;
-    transform: scale(0.9);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+/* Hide scrollbar for all browsers */
+.certificates-carousel::-webkit-scrollbar {
+    display: none;
 }
 
-.slide.active {
-    opacity: 1;
-    transform: scale(1);
+.certificates-carousel {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
-.slide img {
-    width: 340px;
-    height: 220px;
-    object-fit: cover;
+/* Certificate Card */
+.certificate-card {
+    flex: 0 0 220px;
+    perspective: 1000px;
+    transition: transform 0.3s ease;
+}
+
+.certificate-card.active-card {
+    transform: scale(1.05);
+}
+
+.card-inner {
+    background: #fff;
     border-radius: 14px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    transform-style: preserve-3d;
 }
 
-.slide h3 {
-    margin-top: 14px;
-    font-size: 18px;
+.certificate-card:hover .card-inner {
+    transform: rotateY(10deg) rotateX(5deg) scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
 }
 
-.slide p {
-    color: #666;
+.card-inner img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
 }
 
-.slide span {
-    font-size: 14px;
+.certificate-info {
+    padding: 12px;
+}
+
+.certificate-info h3 {
+    font-size: 16px;
+    color: #007BFF;
+    margin-bottom: 4px;
+}
+
+.certificate-info p {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 2px;
+}
+
+.certificate-info span {
+    font-size: 12px;
     color: #888;
 }
 
-.slide button {
-    margin-top: 10px;
-    background: #007bff;
-    color: white;
-    border: none;
-    padding: 8px 14px;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-/* ===== Navigation ===== */
-.nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.6);
-    color: white;
-    border: none;
-    padding: 12px;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.prev {
-    left: 10px;
-}
-
-.next {
-    right: 10px;
-}
-
-/* ===== Dots ===== */
+/* Dots */
 .dots {
-    margin-top: 18px;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 8px;
 }
 
 .dot {
-    width: 10px;
-    height: 10px;
-    margin: 0 6px;
-    background: #ccc;
-    display: inline-block;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
+    background: #ccc;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.dot.active {
-    background: #007bff;
+.active-dot {
+    background: #007BFF;
+    transform: scale(1.3);
 }
 
-/* ===== Modal ===== */
+/* Modal */
 .modal-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.75);
+    background: rgba(0, 0, 0, 0.85);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -119,15 +120,19 @@
 }
 
 .modal-content {
-    background: white;
+    background: #fff;
     padding: 30px;
     max-width: 600px;
+    width: 90%;
     border-radius: 14px;
     position: relative;
+    text-align: left;
+    animation: fadeIn 0.3s ease;
 }
 
 .modal-content img {
     width: 100%;
+    margin: 15px 0;
     border-radius: 10px;
 }
 
@@ -135,62 +140,30 @@
     position: absolute;
     top: 10px;
     right: 16px;
-    font-size: 26px;
+    font-size: 28px;
     cursor: pointer;
+    font-weight: bold;
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
-    .slide img {
-        width: 100%;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
     }
 }
 
-.carousel {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-}
+/* Responsive */
+@media(max-width: 768px) {
+    .certificate-card {
+        flex: 0 0 160px;
+    }
 
-.carousel-track {
-    display: flex;
-    transition: transform 0.6s ease-in-out;
-}
-
-.slide {
-    min-width: 100%;
-    text-align: center;
-    padding: 20px;
-}
-
-.slide img {
-    width: 340px;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 14px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-}
-
-.slide h3 {
-    margin-top: 14px;
-    font-size: 18px;
-}
-
-.slide p {
-    color: #666;
-}
-
-.slide span {
-    font-size: 14px;
-    color: #888;
-}
-
-.slide button {
-    margin-top: 10px;
-    background: #007bff;
-    color: white;
-    border: none;
-    padding: 8px 14px;
-    border-radius: 6px;
-    cursor: pointer;
+    .card-inner img {
+        height: 100px;
+    }
 }

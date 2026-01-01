@@ -1,22 +1,44 @@
-/* src/styles/Badge.css */
+/* ================== BADGE CARD ================== */
 .badge-container {
-    background-color: #f4f7f6;
-    border-radius: 8px;
-    padding: 20px;
-    margin: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 1.2rem;
+    margin: 0.6rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .badge-container:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
 }
 
+/* ================== TEXT ================== */
 .badge-title {
-    font-size: 20px;
-    color: #333;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #1f1f1f;
+    margin-bottom: 0.4rem;
 }
 
 .badge-description {
+    font-size: 0.95rem;
     color: #555;
+    line-height: 1.5;
+}
+
+/* ================== MOBILE ================== */
+@media (max-width: 768px) {
+    .badge-container {
+        padding: 1rem;
+        margin: 0.5rem 0;
+    }
+
+    .badge-title {
+        font-size: 1rem;
+    }
+
+    .badge-description {
+        font-size: 0.9rem;
+    }
 }

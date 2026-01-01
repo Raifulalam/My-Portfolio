@@ -2,63 +2,87 @@
 import React from 'react';
 import '../styles/About.css';
 import ProfileImg from '../assets/Mohammed_Raiful.png';
-import { Link } from 'react-router-dom';
 
 const About = () => {
     const birthday = "2003-04-23";
     const birthDate = new Date(birthday);
     const today = new Date();
-
     let age = today.getFullYear() - birthDate.getFullYear();
     const m = today.getMonth() - birthDate.getMonth();
-    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-        age--;
-    }
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) age--;
+
+    const education = [
+        { year: "2008–2019", degree: "Schooling", institute: "MES Public School, Birgunj, Nepal" },
+        { year: "2019–2021", degree: "Higher Secondary", institute: "NI College, Birgunj, Nepal" },
+        { year: "2022–2026", degree: "B.Tech Computer Science", institute: "GLA University, Mathura, India" },
+    ];
+
+    const skills = [
+        { name: "JavaScript", level: 90 },
+        { name: "React.js", level: 85 },
+        { name: "Node.js", level: 80 },
+        { name: "MongoDB", level: 75 },
+        { name: "HTML & CSS", level: 95 },
+        { name: "Python", level: 70 },
+    ];
+
+    const hobbies = [
+        "Traveling to new places & exploring cultures",
+        "Cooking & experimenting with recipes",
+        "Gaming & problem-solving challenges",
+        "Reading tech blogs & staying updated",
+        "Participating in hackathons & coding competitions"
+    ];
 
     return (
         <div className="about-container">
-            {/* Top Section with Image and Biography */}
+            {/* Top Section */}
             <section className="about-top">
                 <div className="about-image-wrapper">
-                    <img src={ProfileImg} alt="Mohammed Raiful Alam" className="about-image" />
+                    <img src={ProfileImg} alt="Mohammed Raiful" className="about-image" />
                 </div>
                 <div className="about-intro">
                     <h1>Hi, I'm Mohammed Raiful Alam</h1>
                     <p>
-                        I'm a final-year B.Tech Computer Science student at GLA University, Mathura. I completed my schooling at MES Public School, Chhapkaiya-3, Birgunj, Nepal, and pursued my higher secondary education at NI College, Birgunj, Nepal.
+                        Final-year B.Tech Computer Science student with a passion for building elegant and efficient software solutions. I specialize in **Full-Stack Development**, and I love creating projects that solve real-world problems.
                     </p>
                     <p>
-                        I specialize in full-stack development, with a keen interest in solving complex problems through intuitive and efficient digital solutions. My goal is to contribute to impactful projects and continuously improve my skills across the tech stack.
+                        My goal is to continuously learn, innovate, and contribute to impactful projects while improving my skills in both frontend and backend technologies.
                     </p>
-                    <p>
-                        In my free time, I enjoy traveling to new places, experimenting in the kitchen, gaming, and staying updated with the latest trends in software and technology. I'm always open to new challenges and collaboration opportunities that push the boundaries of innovation.
-                    </p>
-
                 </div>
             </section>
-            {/* Education Journey */}
-            <section className="education-journey">
-                <h2>Education Journey</h2>
-                <ul>
-                    <li><strong>Schooling:</strong> MES Public School, Chhapkaiya-3, Birgunj, Nepal</li>
-                    <li><strong>Higher Secondary:</strong> NI College, Birgunj, Nepal</li>
-                    <li><strong>Undergraduate:</strong> GLA University, Mathura – B.Tech in Computer Science (2022–2026)</li>
-                </ul>
+
+            {/* Education Timeline */}
+            <section className="about-education">
+                <h2>Education & Journey</h2>
+                <div className="timeline">
+                    {education.map((edu, i) => (
+                        <div key={i} className="timeline-item">
+                            <div className="timeline-year"><h3>{edu.degree}</h3>
+                                <p>{edu.year}</p>
+                            </div>
+                            <div className="timeline-info">
+                                <h3>{edu.institute}</h3>
+
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </section>
+
             {/* Skills */}
             <section className="about-skills">
-                <h2>Tech Stack</h2>
-                <ul>
-                    <li>Java</li>
-                    <li>JavaScript</li>
-                    <li>React.js</li>
-                    <li>Node.js</li>
-                    <li>Express.js</li>
-                    <li>MongoDB</li>
-                    <li>HTML5 & CSS3</li>
-                    <li>Python</li>
-                    <li>Git & GitHub</li>
-                </ul>
+                <h2>Technical Skills</h2>
+                <div className="skills-bars">
+                    {skills.map((skill, i) => (
+                        <div key={i} className="skill-bar">
+                            <span>{skill.name}</span>
+                            <div className="bar">
+                                <div className="fill" style={{ width: `${skill.level}%` }}></div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </section>
 
             {/* Personal Info */}
@@ -79,15 +103,11 @@ const About = () => {
             <section className="about-hobbies">
                 <h2>Hobbies & Interests</h2>
                 <ul>
-                    <li>Traveling to new destinations and learning about diverse cultures</li>
-                    <li>Cooking a variety of dishes, from traditional to modern recipes</li>
-                    <li>Engaging in competitive gaming and strategy-based challenges</li>
-                    <li>Reading tech blogs and staying current with emerging innovations</li>
-                    <li>Taking part in hackathons and collaborative coding events</li>
+                    {hobbies.map((hobby, i) => (
+                        <li key={i}>{hobby}</li>
+                    ))}
                 </ul>
             </section>
-
-
         </div>
     );
 };
