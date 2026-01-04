@@ -11,6 +11,17 @@ import Activities from "./Activities.jsx";
 import { useEffect } from "react";
 
 const Home = () => {
+    const downloadResume = () => {
+        const fileUrl = `${process.env.PUBLIC_URL}/files/My_Resume.pdf`;
+
+        const link = document.createElement("a");
+        link.href = fileUrl;
+        link.download = "Mohammed_Raiful_Alam_Resume.pdf";
+
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
     const changeBackground = () => {
         const colors = [
             '#1e3c72',
@@ -57,13 +68,10 @@ const Home = () => {
 
                         <div className="hero-buttons">
                             <a href="#projects" className="btn primary">View Projects</a>
-                            <a
-                                href={`${process.env.PUBLIC_URL}/files/My_Resume.pdf`}
-                                download
-                                className="btn secondary"
-                            >
+                            <button className="btn secondary" onClick={downloadResume}>
                                 Download Resume
-                            </a>
+                            </button>
+
                         </div>
 
                         <div className="hero-socials">
