@@ -4,6 +4,7 @@
     padding: 50px 20px;
     font-family: 'Segoe UI', sans-serif;
     text-align: center;
+    background: radial-gradient(circle at top, #0f2027, #000);
 }
 
 .certifications-title {

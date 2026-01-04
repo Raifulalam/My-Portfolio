@@ -2,6 +2,7 @@
     padding: 5rem 2rem;
     background: #0b0f14;
     color: #fff;
+    background: radial-gradient(circle at top, #0f2027, #000);
 }
 
 .projects-header {
@@ -23,7 +24,7 @@
     max-width: 1200px;
     margin: auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
 }
 
@@ -89,14 +90,22 @@
 .project-content p {
     font-size: 0.95rem;
     opacity: 0.85;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
 }
 
 /* TECH STACK */
 .tech-stack {
     margin-top: 1rem;
     display: flex;
-    flex-wrap: wrap;
     gap: 0.5rem;
+    overflow: scroll;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+
+
 }
 
 .tech-stack span {

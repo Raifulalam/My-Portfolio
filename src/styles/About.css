@@ -4,6 +4,7 @@
     padding: 2rem;
     font-family: 'Segoe UI', sans-serif;
     color: #111;
+    background: radial-gradient(circle at top, #0f2027, #000);
 }
 
 /* Top Section */

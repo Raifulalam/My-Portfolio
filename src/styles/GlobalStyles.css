@@ -1,0 +1,56 @@
+/* Apply smooth scrolling to the whole page */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+    width: 12px;
+    /* slightly wider for style */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #0f172a;
+    /* dark track */
+    border-radius: 12px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Thumb with animated gradient */
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #38bdf8, #6366f1, #a78bfa, #f472b6);
+    background-size: 300% 300%;
+    /* for animation */
+    border-radius: 12px;
+    animation: scrollbarGradient 4s ease infinite;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Hover effect */
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #60a5fa, #818cf8, #c084fc, #fb7185);
+    animation: scrollbarGradient 2s ease infinite;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+}
+
+/* Scrollbar animation */
+@keyframes scrollbarGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #38bdf8 #0f172a;
+}

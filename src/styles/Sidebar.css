@@ -12,6 +12,7 @@
     position: relative;
     /* Default */
     z-index: 1000;
+    display: none;
 }
 
 /* Sticky on scroll */
@@ -36,6 +37,14 @@
     margin: 0;
     padding: 0;
 }
+
+.sidebar-list a img {
+    height: 24px;
+    width: 24px;
+    object-fit: contain;
+    /* ensures the icon scales correctly */
+}
+
 
 .sidebar-link {
     color: #fff;

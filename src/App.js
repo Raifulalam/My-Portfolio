@@ -10,6 +10,7 @@ import './styles/GlobalStyles.css';
 import 'boxicons/css/boxicons.min.css';
 import Home from './components/Home';
 import Login from './components/LoginPage';
+import './styles/GlobalStyles.css'
 
 // Custom Hook to Update Page Title Based on Route
 const usePageTitle = () => {

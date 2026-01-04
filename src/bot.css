@@ -1,9 +1,13 @@
 .bot-wrapper {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 50%;
+    right: -15px;
     z-index: 9999;
     font-family: 'Segoe UI', sans-serif;
+}
+
+.bot-wrapper:hover {
+    right: 10px;
 }
 
 .bot-toggle {

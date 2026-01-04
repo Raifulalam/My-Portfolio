@@ -8,8 +8,33 @@ import Bot from "../Bot.jsx";
 import About from "./About.jsx";
 import Vlogs from "./Vlogs.jsx";
 import Activities from "./Activities.jsx";
+import { useEffect } from "react";
 
 const Home = () => {
+    const changeBackground = () => {
+        const colors = [
+            '#1e3c72',
+            '#2a5298',
+            '#4dabf7',
+            '#ff9a9e',
+            '#fad0c4',
+            '#fbc2eb',
+            '#a6c1ee'
+        ];
+
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+
+        const element = document.getElementsByClassName('heroimagetop')[0];
+        if (element) {
+            element.style.backgroundColor = randomColor;
+        }
+    };
+
+    useEffect(() => {
+        changeBackground();
+    }, []);
+
+
     return (
         <div className="home-container">
 
@@ -56,7 +81,8 @@ const Home = () => {
 
                     {/* RIGHT */}
                     <div className="hero-image-wrapper">
-                        <img src={HeroImage} alt="Mohammed Raiful Alam" />
+                        <img className="heroimagetop" src={HeroImage} alt="Mohammed Raiful Alam" />
+                        <button className="changeBtn" onClick={changeBackground}>💱</button>
                     </div>
 
                 </div>
@@ -65,8 +91,23 @@ const Home = () => {
             {/* SKILLS */}
             <section className="skills-strip">
                 {[
-                    "JavaScript", "React", "Node.js", "Express",
-                    "MongoDB", "MySQL", "Java", "Git", "REST APIs"
+                    "HTML",
+                    "CSS",
+                    "Bootstrap",
+                    "Tailwind CSS",
+                    "Java",
+                    "Git & GitHub",
+                    "Express.js",
+                    "RESTful APIs",
+                    "SQL",
+                    "NoSQL",
+                    "PHP",
+                    "JavaScript",
+                    "React.js",
+                    "Node.js",
+                    "MongoDB",
+                    "HTML & CSS",
+                    "Python"
                 ].map(skill => (
                     <span key={skill}>{skill}</span>
                 ))}

@@ -21,7 +21,7 @@ const About = () => {
         { name: "JavaScript", level: 90 },
         { name: "React.js", level: 85 },
         { name: "Node.js", level: 80 },
-        { name: "MongoDB", level: 75 },
+        { name: "MongoDB", level: 85 },
         { name: "HTML & CSS", level: 95 },
         { name: "Python", level: 70 },
     ];
